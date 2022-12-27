@@ -1,0 +1,28 @@
+
+type Query{
+allBooks : [Book]
+getBook(bookId : Int) : Book
+}
+
+#create book object
+type Book{
+    bookid : Int!,
+    bookname : String,
+    author : String,
+    price : Int
+}
+
+#It is used for create, update and delete data
+type Mutation {
+    createBook(book:BookInput) : Book
+    deleteBook(bookId :Int) : Boolean
+}
+
+input BookInput{
+    bookname : String,
+    author : String,
+    price : Int
+}
+
+
+
